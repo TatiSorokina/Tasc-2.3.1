@@ -5,7 +5,6 @@ import web.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 import java.util.List;
 
 
@@ -16,7 +15,7 @@ public class UserDaoImpl implements UserDao {
     private EntityManager entityManager;
 
     @Override
-    public List<User> allUsers() {
+    public List<User> getAllUsers() {
         return entityManager.createQuery("select u from User u", User.class)
                 .getResultList();
     }
